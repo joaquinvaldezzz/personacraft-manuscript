@@ -1,0 +1,263 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{array}
+
+\def\BibTeX{\textrm{B\kern-.05em\textsc{i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+    \title{PersonaCraft: Customer Personality Analysis with Python NLP}
+
+    \author{\IEEEauthorblockN{Elmer B. Delosendo$^{1}$, Jann Kyle O. Adanza$^{2}$, John Joaquin A. Valdez$^{3}$, \\Jon Mark G. Aranas$^{4}$, and Venz Eric Dapadap$^{5}$}
+    \IEEEauthorblockA{\textit{College of Computer Studies}\\\textit{Our Lady of Fatima University}\\Quezon City, Metro Manila\\\\Email: $^{1}$ebdelosendo@student.fatima.edu.ph, $^{2}$joadanza7096qc@student.fatima.edu.ph, $^{3}$javaldez1642qc@student.fatima.edu.ph,\\ $^{4}$jgaranas1938qc@student.fatima.edu.ph, $^{5}$vdapadap@student.fatima.edu.ph}}
+
+    \maketitle
+
+    \begin{abstract}
+        This case study explores the intriguing field of employing Python Natural Language Processing
+        (NLP) tools to analyze human psychology. This study is to investigate the relationship
+        between linguistic patterns in written text and different personality attributes by
+        utilizing NLP tools. This study uses sentiment analysis, text categorization, and other NLP algorithms
+        to look for patterns that may indicate characteristics such as neuroticism, agreeableness, conscientiousness,
+        extroversion, and openness. The results of this work have significance not only for the
+        field of computational linguistics but also for human-computer interaction, mental health evaluations,
+        and personalized recommendation systems. This case study attempts to shed light on the complex
+        relationship between language use and human personality traits by utilizing Python's power for
+        NLP analysis.
+    \end{abstract}
+
+    \begin{IEEEkeywords}
+        Python, Natural Language Processing, NLP tools, human psychology, linguistic patterns,
+        written text, personality attributes, sentiment analysis, text categorization, neuroticism, agreeableness,
+        conscientiousness, extroversion, openness, computational linguistics, human-computer
+        interaction, mental health evaluations, personalized recommendation systems, language use,
+        personality traits, NLP analysis
+    \end{IEEEkeywords}
+
+    \section{Introduction}
+    Analyzing and testing a person's personality is crucial to their overall growth. The most
+    popular personality test that individuals use is the Myer-Briggs Test Indicator. Even though psychologists
+    administer these tests, it is incredibly simple to trick them into giving us the personality
+    type we want because the questions are so simple. This research focuses on using images instead of
+    questions to automate this task using Neural Networks. For analysis, a tagged dataset containing
+    user answers on social media and their personality type is employed. Following cleaning, appropriate
+    classification techniques are used to extract pertinent answer attributes using natural language
+    processing (NLP) \cite{b1}.
+
+    The advancement of technology has had a major impact on psychological data analysis and forecasting.
+    Recent developments in computer technology and the Fourth Industrial Revolution have made it
+    possible to quickly and accurately explore and predict human traits, with ongoing advances. In
+    contrast to other industries, such as marketing, engineering, and medicine, psychology has been
+    slower to incorporate technology, despite these industries rapidly integrating computer expertise
+    to generate useful technologies. The investigation and determination of a person's psychological
+    condition or characteristics are continuing endeavors. However, because personality is made up
+    of complex structures and a wide range of theories, research and technological advancements are hampered
+    \cite{b2}.
+
+    This uses the machine learning technique of logistic regression to classify personalities.
+    Furthermore, machines capable of Natural Language Processing (NLP) can converse and comprehend in
+    human language. The goal of earlier research projects was to automatically determine a person's
+    personality type. One important application that offers several benefits is the use of machine learning
+    algorithms to classify individuals according to their personalities. In the modern world, knowing
+    one's personality can be quite helpful in deciding on a job and personal interests. Personality
+    evaluations are a common tool used by modern businesses to streamline the hiring process and
+    match candidates with positions that best fit their skills \cite{b3}.
+
+    Using Machine Learning to Predict Textual Data-Based Personality: Personality is a crucial aspect
+    of identity as it allows for individual differentiation. Personality prediction is becoming a
+    more popular academic topic. Since it reduces time and increases authority by doing away with the
+    requirement for customers to fill out surveys, using statistics to predict personality from
+    social media is a potential approach. Studying personality is an immensely interesting subject for
+    academics. In the real world, personality prediction has many uses. More people utilize social
+    media platforms every day. Large volumes of fresh and textual content are posted online every day.
+    Current research focuses on Linear Discriminant Analysis, Naive Bayes Multinomial, and AdaBoost
+    beyond Twitter norms \cite{b4}.
+
+    \section{Related Works}
+    This section explores recent advancements in personality assessment research and related
+    methodologies across various domains.
+
+    Pradhan et al. (2020) emphasize the significance of personality testing in individual development,
+    highlighting the widespread use of the Myers-Briggs Type Indicator (MBTI). They address concerns
+    regarding potential manipulation of traditional personality tests and propose an automated approach
+    using Neural Networks and visuals instead of text-based queries. Their research utilizes a
+    labeled dataset comprising user comments from social media, coupled with personality types. By
+    employing Natural Language Processing (NLP) techniques and classification algorithms, they develop
+    a predictive model to accurately detect personality types based on user responses. This model
+    serves as the foundation for an interactive personality assessment tool hosted on a website.
+
+    Jang et al. (2022) discuss the transformative impact of technological progress on data analysis and
+    forecasting in psychology, particularly in the context of the Fourth Industrial Revolution. Despite
+    advancements in other fields, the integration of technology in psychology has been comparatively
+    slower. They highlight ongoing efforts to explore and predict psychological states or traits,
+    identifying challenges stemming from the complexity of personality theories and structures.
+
+    Chincholkar et al. (2023) introduce the logistic regression machine learning method for personality
+    classification, emphasizing the benefits of leveraging NLP-enabled machines for understanding
+    and engaging in human language. They underscore the practical applications of personality classification
+    in various domains, including career guidance and organizational productivity.
+
+    Archith et al. (2022) discuss the growing academic interest in using machine learning to predict
+    personality from textual data, particularly from social media. They highlight the advantages of this
+    approach, such as eliminating the need for traditional questionnaires and leveraging the vast
+    amount of textual information available online. Their research explores techniques such as Linear
+    Discriminant Analysis, Naive Bayes Multinomial, and AdaBoost for personality prediction beyond conventional
+    norms observed on platforms like Twitter.
+
+    Together, these studies underscore the evolving landscape of personality assessment and
+    prediction, fueled by advancements in technology and data analysis methodologies.
+
+    \section{Methods}
+    This chapter outlines how researchers created PersonaCraft: Customer Personality Analysis. The researchers
+    used Agile methodology and Python NLP algorithm to develop a system that can analyze customer personality
+    from text. Merging Agile's iterative approach with the Python NLP algorithm, they investigate subtle
+    personality traits.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.75\linewidth]{Manuscript Images/Agile method.png}
+        \caption{Agile Development}
+    \end{figure}
+
+    \subsection{Planning Phase}
+
+    In this stage, researchers create a road map to develop the system. The researchers investigate the
+    works already done on personality and NLP and develop a plan. to decode words in terms of
+    personality traits. Researchers make plans for data collection, tool selection, and testing consistency.
+
+    \begin{enumerate}
+        \item \textit{Project Framework:} PersonaCraft: Customer Personality Analysis with Python NLP.
+            occurs in a few phases that follow, with data collection, followed by preprocessing to
+            standardize formats, after that the structured data sets are used to train machine learning
+            to differentiate language patterns that correlates with different personalities. While
+            validation ensures accuracy the system performance is evaluated through analysis and
+            interpretation. This methodical approach aims to create a reliable framework for PersonaCraft:
+            Customer Personality Analysis with Python NLP.
+
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[width=0.75\linewidth]{Manuscript Images/Framework.png}
+                \caption{Project Framework}
+            \end{figure}
+
+        \item \textit{Architecture of PersonaCraft: Customer Personality Analysis with Python NLP:}
+            The overall process of the PersonaCraft: Customer Personality Analysis with Python NLP is
+            represented below. The input-process-output is illustrated as follows:
+
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[width=0.75\linewidth]{Manuscript Images/Input-Process-Output.png}
+                \caption{Architecture}
+            \end{figure}
+
+            \begin{itemize}
+                \item \textit{Input}. Consists of many textual datasets that represent different communication
+                    such as service chats, emails, and more.
+
+                \item \textit{Process}. During processing, the system will analyze the input data. The
+                    data will undergo preprocessing, analyzing the data, and interpreting the result.
+                    Eventually, validation will ensure accuracy. Lastly, the system will classify the
+                    personality behind the text.
+
+                \item \textit{Output}. In this phase, the output will show the classified
+                    personality behind the input data that the user wrote.
+            \end{itemize}
+
+        \item \textit{User Case Modeling:} During this phase, use case modeling illustrates the interaction
+            between the system and the user, the objective of a use case modeling is to simplify
+            system functions and guide developers to create systems that meet users needs.
+
+        \item \textit{Acceptance Test Criteria:} The system shall allow the user to input any text
+            in the system. This may be prepared in the way shown below using the scenario oriented acceptance
+            criteria technique.
+    \end{enumerate}
+
+    \subsection{Design Phase}
+
+    In this phase, the system's architecture is carefully designed. The researchers opt for a Python
+    NLP algorithm implemented using the Flask framework for backend development. For front-end
+    development and database management, they utilize the MERN stack, comprising MongoDB, Express,
+    React, and Node.js. The system's design is meticulously crafted to optimize performance and
+    enhance user experience.
+
+    \subsection{Coding Phase}
+
+    In this phase, the system's construction is elaborated upon. The technical expert employs Visual
+    Studio Code as the primary text editor and utilizes the Flask framework for backend development,
+    alongside MongoDB and Express for database management. For the frontend, Next.js and Tailwind
+    CSS are employed to craft a user-friendly interface.
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=1\linewidth]{
+            Manuscript Images/CleanShot 2024-05-07 at 18.32.27@2x.png
+        }
+        \caption{System development done in Visual Studio Code}
+    \end{figure}
+
+    \subsection{Testing Phase}
+
+    During this phase, researchers meticulously scrutinize the system to ensure it aligns with the specified
+    requirements and standards. A series of tests are conducted to evaluate different facets of the
+    system's accuracy. Any discrepancies uncovered during testing are logged, addressed, and subsequently
+    retested until the system attains the desired quality benchmarks. Finally, researchers verify the
+    system's reliability, accuracy, and readiness for deployment.
+
+    \subsection{Release of the System}
+
+    After completing the testing phase, the system moves forward to the release stage. This entails
+    finalizing documentation, crafting user guides, and preparing the system for deployment. Release
+    planning encompasses coordinating with end-users, scheduling deployment, and communicating updates
+    about the system. Following the release, support and maintenance activities persist to uphold the
+    system's integrity and address any post-deployment issues that may arise.
+
+    \begin{table}
+        \begin{tabular}{p{4cm}p{4cm}}
+            \textbf{Risks}                           & \textbf{Mitigation Measures}                                                       \\
+            \hline
+            System incompatibility with the hardware & Install and upgrade necessary software, especially the use of the system software. \\
+            \hline
+            Inevitable deletion of the system        & Provides a backup system.                                                          \\
+            \hline
+            Not accurate classification              & Train the system countless times to be more accurate.                              \\
+        \end{tabular}
+        \caption{Risk Assessment and Mitigation Measures}
+    \end{table}
+
+    \begin{enumerate}
+        \item \textit{Sustainability Measures:} To ensure sustainability measures, continuous support
+            and maintenance are required to resolve upcoming bugs or issues. The researchers will
+            engage in communication with users where the system is deployed. Additionally, the
+            researchers will ask feedback for system growth and relevance for upcoming updates.
+
+        \item \textit{Risk Assessment and Mitigation Measures:} During deployment or upgrading the
+            system there might be risks encountered. This will help the researchers to resolve the problem
+            and address them before affecting the system.. The system offered a set of testing procedures
+            to verify that application deployment and updates will run smoothly and with little issues.
+    \end{enumerate}
+
+    \begin{thebibliography}{00}
+        \bibitem{b1} T. Pradhan, R. Bhansali, D. Chandnani and A. Pangaonkar, "Analysis of Personality
+            Traits using Natural Language Processing and Deep Learning," 2020 Second International Conference
+            on Inventive Research in Computing Applications (ICIRCA), Coimbatore, India, 2020, pp.
+            457-461, doi: 10.1109/ICIRCA48905.2020.9183090.
+
+        \bibitem{b2} J. Jang, S. Yoon, G. Son, M. Kang, J. Y. Choeh, and K.-H. Choi, "Predicting
+            Personality and Psychological Distress Using Natural Language Processing: A Study Protocol,"
+            Frontiers in Psychology, vol. 13, Apr. 2022, doi: https://doi.org/10.3389/fpsyg.2022.865541.
+
+        \bibitem{b3} Prof. Amol Chincholkar, Dipti Bhosale, Shivanjali Adsul, Anjali Bodkhe, and R. Kadam,
+            "A Comprehensive Survey on Personality Prediction Using Machine Learning Techniques," International
+            journal of advanced research in computer and communication engineering, vol. 12, no. 11,
+            Nov. 2023, doi: https://doi.org/10.17148/ijarcce.2023.121120.
+
+        \bibitem{b4} P. Archith. "ANALYSIS OF HUMAN TRAITS USING MACHINE LEARNING." Available: https://www.jetir.org/papers/JETIR2205606.pdf
+    \end{thebibliography}
+    \vspace{12pt}
+\end{document}

@@ -1,0 +1,14 @@
+{
+  "name": "personacraft-manuscript",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-latex": "^2.0.1"
+  }
+}
